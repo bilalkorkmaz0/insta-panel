@@ -1,1 +1,43 @@
 
+<!-- public/admin.html -->
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Admin Paneli</title>
+  <link rel="stylesheet" href="/public/style.css">
+</head>
+<body>
+  <div class="container">
+    <h2>Admin Paneli</h2>
+
+    <section>
+      <h3>Yeni Kullanıcı Oluştur</h3>
+      <input type="text" id="newUsername" placeholder="Instagram kullanıcı adı">
+      <input type="password" id="newPassword" placeholder="Şifre">
+      <input type="text" id="newBio" placeholder="Biyografi">
+      <button onclick="createUser()">Oluştur</button>
+    </section>
+
+    <section>
+      <h3>Kullanıcılar</h3>
+      <ul id="userList"></ul>
+    </section>
+
+    <section id="adminUploadControls" class="hidden">
+      <h3>Seçilen Kullanıcının Gönderileri</h3>
+      <input type="file" id="uploadInput">
+      <button onclick="submitPost()">Gönderi Ekle</button>
+      <div id="uploadProgress"></div>
+      <div id="userGrid" class="grid phone-mockup"></div>
+    </section>
+
+    <section id="logoutArea">
+      <h3>Hesap Ayarları</h3>
+      <button onclick="logout()">Çıkış Yap</button>
+    </section>
+  </div>
+  <script src="/public/script.js"></script>
+</body>
+</html>
