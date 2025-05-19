@@ -1,1 +1,75 @@
-<!DOCTYPE html><html><head><title>Panel</title></head><body><h1>Hoş Geldin!</h1><p>Arayüz burada olacak.</p></body></html>
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Instagram Grid Yönetimi</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Giriş Sayfası -->
+  <div id="loginPage" class="login-container">
+    <div class="login-left">
+      <h2>Hoş Geldin!</h2>
+      <p>Admin girişiyle yeni kullanıcı oluşturabilirsiniz.</p>
+    </div>
+    <div class="login-right">
+      <h1>Giriş Yap</h1>
+      <input type="text" id="loginUsername" placeholder="Kullanıcı Adı">
+      <input type="password" id="loginPassword" placeholder="Şifre">
+      <button onclick="login()">Giriş Yap</button>
+      <p class="alt-info">Admin: admin / 1234</p>
+    </div>
+  </div>
+
+  <!-- Admin Panel -->
+  <div id="adminPanel" class="hidden panel">
+    <div class="admin-header">
+      <h2>Admin Paneli</h2>
+      <button onclick="logout()">Çıkış Yap</button>
+    </div>
+
+    <h3>Yeni Kullanıcı Oluştur</h3>
+    <input type="text" id="newUsername" placeholder="Kullanıcı adı">
+    <input type="password" id="newPassword" placeholder="Şifre">
+    <input type="text" id="newBio" placeholder="Biyografi">
+    <button onclick="createUser()">Oluştur</button>
+
+    <h3>Kullanıcılar</h3>
+    <ul id="userList"></ul>
+
+    <div id="adminUploadControls" class="hidden">
+      <input type="file" id="uploadInput" accept="image/*">
+      <button onclick="submitPost()">Gönderi Ekle</button>
+      <p id="uploadProgress" class="upload-progress"></p>
+    </div>
+
+    <!-- Telefon Mockup -->
+    <h3>Seçilen Kullanıcının Gönderileri</h3>
+    <div id="adminUserPreviewPhone" class="phone-mockup hidden">
+      <div class="phone-header">
+        <span id="mockupUsername"></span>
+      </div>
+      <div class="grid" id="adminUserGridPreview"></div>
+    </div>
+  </div>
+
+  <!-- Kullanıcı Paneli -->
+  <div id="userPanel" class="hidden panel">
+    <div class="user-header">
+      <h2 id="userTitle"></h2>
+      <button onclick="openSettings()">⚙️</button>
+    </div>
+    <div class="grid" id="userGrid"></div>
+  </div>
+
+  <!-- Hesap Ayarları -->
+  <div id="settingsPanel" class="hidden panel">
+    <h2>Hesap Ayarları</h2>
+    <button onclick="logout()">Çıkış Yap</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
