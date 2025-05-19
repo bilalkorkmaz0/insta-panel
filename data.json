@@ -1,6 +1,11 @@
 {
   "users": [
     {
+      "username": "admin",
+      "password": "1234",
+      "bio": "Yönetici"
+    },
+    {
       "username": "tatlansweets",
       "password": "1234",
       "bio": "Tatlı anılar burada"
